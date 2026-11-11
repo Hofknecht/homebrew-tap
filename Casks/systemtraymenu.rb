@@ -1,6 +1,6 @@
 cask "systemtraymenu" do
-  version "3.1.155"
-  sha256 "46e4f5dc8260bebe6d5463512eb667cebf7c1e1b58f6f80cc59e7d89da5716e1"
+  version "3.1.286"
+  sha256 "f2d8c556760bfdd8a2eb4f102271df18736453ddefa7dd3dcc110464622d88bf"
 
   url "https://hofknecht.eu/systemtraymenu/download/#{version}/SystemTrayMenu-#{version}-macos-arm64.zip"
   name "SystemTrayMenu"
@@ -14,15 +14,18 @@ cask "systemtraymenu" do
 
   auto_updates true
   depends_on arch: :arm64
+  depends_on :macos
 
   app "SystemTrayMenu.app"
 
-  uninstall quit:      "de.systemtraymenu.app",
-            launchctl: "de.systemtraymenu.app"
+  uninstall launchctl: "de.systemtraymenu.app",
+            quit:      "de.systemtraymenu.app"
 
   zap trash: [
     "~/Library/Application Support/SystemTrayMenu",
+    "~/Library/Caches/de.systemtraymenu.app",
     "~/Library/Caches/SystemTrayMenu",
+    "~/Library/Logs/SystemTrayMenu.log",
   ]
 
   caveats <<~EOS
