@@ -1,6 +1,6 @@
 cask "systemtraymenu" do
-  version "3.1.319"
-  sha256 "aa93f6d85b3b76b26071bcae5fb05579362ccd268ace8dc2082aff0bd5f233ee"
+  version "3.1.328"
+  sha256 "ff842f65f8c802e2ccd95912ad1e6c28ce90ea63f7c6af265f0c488f5924dcd8"
 
   url "https://hofknecht.eu/systemtraymenu/download/#{version}/SystemTrayMenu-#{version}-macos-arm64.zip"
   name "SystemTrayMenu"
